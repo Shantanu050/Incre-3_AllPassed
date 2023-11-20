@@ -11,7 +11,7 @@ namespace dotnetapp.Controllers
 
     
 [ApiController]
-[Route("/[Controller]")]
+//[Route("/[Controller]")]
     public class AdminController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -25,13 +25,17 @@ namespace dotnetapp.Controllers
         public IActionResult GetPlayers()
         {
              var data=_context.Players.ToList();
+             if(data==null)
+             return NotFound();
              return Ok(data);
         }
         [HttpGet]
-        [Route("ListTeams")]
+       // [Route("ListTeams")]
         public IActionResult GetTeams()
         {
              var data=_context.Teams.ToList();
+             if(data==null)
+             return NotFound();
              return Ok(data);
         }
         [HttpPut]
@@ -47,7 +51,16 @@ namespace dotnetapp.Controllers
         _context.SaveChanges();
         return Ok();
     }
-    public 
+
+    [HttpDelete]
+    //[Route("Delete/{id}")]
+    public IActionResult DeletePlayer(int id)
+    {
+       Player player=_context.Players.Find(id);
+       _context.Players.Remove(player);
+       _context.SaveChanges();
+       return Ok();
+    }
 
         
 
