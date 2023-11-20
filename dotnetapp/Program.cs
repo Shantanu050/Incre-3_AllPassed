@@ -35,6 +35,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors();
+app.UseRouting();
 
 app.UseAuthorization();
 
