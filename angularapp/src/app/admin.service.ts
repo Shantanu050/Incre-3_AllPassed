@@ -13,4 +13,12 @@ url:string="https://8080-bfebfcbdbbfacbbecabcdadeafbbdcaeafe.premiumproject.exam
   {
     return this.http.get<any[]>(this.url+'/ListPlayers')
   }
+  getPlayerById(id:number):Observable<Player>
+  {
+    return this.http.get<Player>(this.url+'/GetPlayer/'+id)
+  }
+  deletePlayer(id:number):Observable<Player>
+  {
+    return this.http.delete<Player>(this.url+'/DeletePlayer/'+id)
+  }
 }
