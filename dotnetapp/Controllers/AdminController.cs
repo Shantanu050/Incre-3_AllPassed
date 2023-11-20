@@ -20,7 +20,7 @@ namespace dotnetapp.Controllers
         {
             _context = context;
         }
-        
+
         [HttpGet]
         [Route("ListPlayers")]
         public IActionResult GetPlayers()
@@ -76,7 +76,7 @@ namespace dotnetapp.Controllers
         _context.SaveChanges();
         return Created("Player Added",newPlayer);
         }
-        return BadRequest("Cannot add");
+        return BadRequest("Cannot add Player");
     }
 
        [HttpGet]
@@ -87,6 +87,19 @@ namespace dotnetapp.Controllers
              if(data==null)
              return NotFound();
              return Ok(data);
+        }
+
+        [HttpPost]
+        [Route("AddTeam")]
+        public IActionResult AddTeam(Team newTeam)
+        {
+            if(ModelState.IsValid)
+            {
+            _context.Teams.Add(newTeam);
+            _context.SaveChanges();
+            return Created("Team added",newTeam);
+            }
+            return BadRequest("Cannot add team");
         }
 
         
