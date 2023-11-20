@@ -11,6 +11,6 @@ url:string="https://8080-bfebfcbdbbfacbbecabcdadeafbbdcaeafe.premiumproject.exam
   constructor(private http:HttpClient) { }
   getPlayers():Observable<any[]>
   {
-    this.http.get<any[]>(url+'/ListPlayers')
+    return this.http.get<any[]>(this.url+'/ListPlayers')
   }
 }
