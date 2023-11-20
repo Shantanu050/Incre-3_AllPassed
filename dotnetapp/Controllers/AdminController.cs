@@ -11,7 +11,7 @@ namespace dotnetapp.Controllers
 
     
 [ApiController]
-//[Route("/[Controller]")]
+[Route("/[Controller]")]
     public class AdminController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -21,7 +21,7 @@ namespace dotnetapp.Controllers
             _context = context;
         }
         [HttpGet]
-        //[Route("ListPlayers")]
+        [Route("ListPlayers")]
         public IActionResult GetPlayers()
         {
              var data=_context.Players.ToList();
@@ -30,7 +30,7 @@ namespace dotnetapp.Controllers
              return Ok(data);
         }
         [HttpGet]
-       // [Route("ListTeams")]
+       [Route("ListTeams")]
         public IActionResult GetTeams()
         {
              var data=_context.Teams.ToList();
@@ -39,7 +39,7 @@ namespace dotnetapp.Controllers
              return Ok(data);
         }
         [HttpPut]
-    //    [Route("EditPlayer/{id}")]
+       [Route("EditPlayer/{id}")]
     public IActionResult PutPlayer(int id,Player editedPlayer)
     {
         Player oldPlayer=_context.Players.Find(id);
@@ -53,13 +53,26 @@ namespace dotnetapp.Controllers
     }
 
     [HttpDelete]
-    //[Route("Delete/{id}")]
+    [Route("Delete/{id}")]
     public IActionResult DeletePlayer(int id)
     {
        Player player=_context.Players.Find(id);
        _context.Players.Remove(player);
        _context.SaveChanges();
        return Ok();
+    }
+
+    [HttpPost]
+    [Route("AddPlayer")]
+    public IActionResult PostPlayer(Player newPlayer)
+    {
+        if(ModelState.IsValid)
+        {
+        _context.Players.Add(newPlayer);
+        _context.SaveChanges();
+        return Created("Player Added",newPlayer);
+        }
+        return BadRequest("Cannot add");
     }
 
         
