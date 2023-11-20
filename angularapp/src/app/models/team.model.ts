@@ -1,5 +1,4 @@
-export class Team
- {
+export class Team {
     id:number
     name:string
 }
