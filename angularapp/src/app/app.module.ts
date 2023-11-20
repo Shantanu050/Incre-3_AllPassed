@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { DeletePlayerComponent } from './delete-player/delete-player.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

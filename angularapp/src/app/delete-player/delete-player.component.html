@@ -1,28 +1,28 @@
 <h3>Deleting Player</h3>
-<form (ngSubmit)="deleteData(playerdata)" #playerdel="ngForm">
-<div>
+<form (ngSubmit)="deleteData(playerdata)" #playerform="ngForm" >
+<div class="form-group">
     <label for="id">ID</label>
-    <input type="text" id="id" name="id" value="playerdata.id" readonly>
+    <input type="text" id="id" name="id" [value]="playerdata.id" readonly class="form-control">
 </div>
-<div>
+<div class="form-group">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" value="playerdata.name" readonly>
+    <input type="text" id="name" name="name" [value]="playerdata.name" readonly>
 </div>
-<div>
+<div class="form-group">
     <label for="age">Age</label>
-    <input type="text" id="age" name="age" value="playerdata.age" readonly>
+    <input type="text" id="age" name="age" [value]="playerdata.age" readonly>
 </div>
-<div>
+<div class="form-group">
     <label for="category">Category</label>
-    <input type="text" id="category" name="category" value="playerdata.category" readonly>
+    <input type="text" id="category" name="category" [value]="playerdata.category" readonly>
 </div>
-<div>
+<div class="form-group">
     <label for="biddingPrice">Bidding Price</label>
-    <input type="text" id="biddingPrice" name="biddingPrice" value="playerdata.biddingPrice" readonly>
+    <input type="text" id="biddingPrice" name="biddingPrice" [value]="playerdata.biddingPrice" readonly>
 </div>
-<div>
+<div class="form-group">
     <label for="teamId">Team ID</label>
-    <input type="text" id="teamId" name="teamId" value="playerdata.teamId" readonly>
+    <input type="text" id="teamId" name="teamId" [value]="playerdata.teamId" readonly>
 </div>
 <input type="submit" class="btn btn-danger" value="Delete Player">
 </form>
