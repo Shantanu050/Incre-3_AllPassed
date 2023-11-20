@@ -20,6 +20,7 @@ namespace dotnetapp.Controllers
         {
             _context = context;
         }
+        
         [HttpGet]
         [Route("ListPlayers")]
         public IActionResult GetPlayers()
@@ -29,15 +30,18 @@ namespace dotnetapp.Controllers
              return NotFound();
              return Ok(data);
         }
+
         [HttpGet]
-       [Route("ListTeams")]
-        public IActionResult GetTeams()
+        [Route("GetPlayer/{id}")]
+        public IActionResult GetPlayerById(int id)
         {
-             var data=_context.Teams.ToList();
-             if(data==null)
-             return NotFound();
-             return Ok(data);
+            var data=_context.Players.Find(id);
+            if(data==null)
+            return NotFound();
+            return Ok(data);
         }
+
+       
         [HttpPut]
        [Route("EditPlayer/{id}")]
     public IActionResult PutPlayer(int id,Player editedPlayer)
@@ -53,7 +57,7 @@ namespace dotnetapp.Controllers
     }
 
     [HttpDelete]
-    [Route("Delete/{id}")]
+    [Route("DeletePlayer/{id}")]
     public IActionResult DeletePlayer(int id)
     {
        Player player=_context.Players.Find(id);
@@ -74,6 +78,16 @@ namespace dotnetapp.Controllers
         }
         return BadRequest("Cannot add");
     }
+
+       [HttpGet]
+       [Route("ListTeams")]
+        public IActionResult GetTeams()
+        {
+             var data=_context.Teams.ToList();
+             if(data==null)
+             return NotFound();
+             return Ok(data);
+        }
 
         
 
