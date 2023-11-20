@@ -10,7 +10,7 @@ namespace dotnetapp.Models
         public string Name{get;set;}
         public int Age{get;set;}
         public string Category{get;set;}
-        public decimal BiddingAmount{get;set;}
+        public decimal BiddingPrice{get;set;}
         [ForeignKey("Team")]
         public int TeamId{get;set;}
         public Team Team{get;set;}
