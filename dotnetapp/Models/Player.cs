@@ -2,8 +2,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace dotnetapp.Models
 {
-    public class Plater
+    public class Player
     {
-        public int 
+        public int Id{get;set;}
+        
     }
 }
