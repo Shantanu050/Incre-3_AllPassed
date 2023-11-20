@@ -46,6 +46,7 @@ namespace dotnetapp.Controllers
        [Route("EditPlayer/{id}")]
     public IActionResult PutPlayer(int id,Player editedPlayer)
     {
+        try{
         Player oldPlayer=_context.Players.Find(id);
         oldPlayer.Name=editedPlayer.Name;
         oldPlayer.Age=editedPlayer.Age;
@@ -54,16 +55,27 @@ namespace dotnetapp.Controllers
         oldPlayer.TeamId=editedPlayer.TeamId;
         _context.SaveChanges();
         return Ok();
+        }
+        catch(Exception e)
+        {
+            return BadRequest();
+        }
     }
 
     [HttpDelete]
     [Route("DeletePlayer/{id}")]
     public IActionResult DeletePlayer(int id)
     {
-       Player player=_context.Players.Find(id);
+        try{
+        Player player=_context.Players.Find(id);
        _context.Players.Remove(player);
        _context.SaveChanges();
-       return Ok();
+        return Ok();
+        }
+        catch(Exception e)
+        {
+            return BadRequest();
+        }
     }
 
     [HttpPost]
