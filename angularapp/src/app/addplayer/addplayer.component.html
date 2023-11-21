@@ -14,7 +14,14 @@
         <label for="age">Age</label>
         <input type="text" name="age" id="age" placeholder="Enter Player age" [(ngModel)]="playerdata.age"
         #age="ngModel"  min="18" max="40" class="form-control">
-        
+        <div *ngIf="age.invalid &&(age.dirty ||age.touched)" style="color:red;">
+         <div *ngIf="age.errors.min">
+          Age should be minimum 18
+         </div>
+         <div *ngIf="age.errors.max">
+          Age should be max 40
+         </div>
+        </div>
     </div>
     <div class="form-group">
         <label for="teamId">Team ID</label>
