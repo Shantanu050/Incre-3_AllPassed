@@ -3,12 +3,18 @@
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" placeholder="Enter Player Name" [(ngModel)]="playerdata.name"
-        #name="ngModel" class="form-control">
+        #name="ngModel" required class="form-control">
+        <div *ngIf="name.invalid &&(name.dirty||name.touched)" style="color:red;">
+            <div *ngIf="name.errors.required">
+             Player Name is required
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label for="age">Age</label>
         <input type="text" name="age" id="age" placeholder="Enter Player age" [(ngModel)]="playerdata.age"
-        #age="ngModel" class="form-control">
+        #age="ngModel"  min="18" max="40" class="form-control">
+        
     </div>
     <div class="form-group">
         <label for="teamId">Team ID</label>
