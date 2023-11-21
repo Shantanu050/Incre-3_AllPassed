@@ -9,16 +9,18 @@ import { Player } from '../models/player.model';
   styleUrls: ['./delete-player.component.css']
 })
 export class DeletePlayerComponent implements OnInit {
-playerdata:Player={id:0,name:'',age:0,category:'',biddingPrice:0,teamId:0}
+playerdata={id:0,name:'',age:0,category:'',biddingPrice:0,teamId:0}
 id:number
+
   constructor(private ps:AdminService,private router:Router,private ar:ActivatedRoute) { 
+
     const pid=this.ar.snapshot.paramMap.get('id')
     this.id=Number(pid)
-   this.ps.getPlayerById(this.id).subscribe((data:Player)=>{
+   this.ps.getPlayerById(this.id).subscribe((data:any)=>{
     this.playerdata=data
    })
   }
-  deleteData(data:Player):void
+  deleteData(data:any):void
   {
     this.ps.deletePlayer(this.id).subscribe(()=>
     {

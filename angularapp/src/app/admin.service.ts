@@ -3,6 +3,7 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Player } from './models/player.model';
 import { Team } from './models/team.model';
+import { resourceUsage } from 'process';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,12 +14,30 @@ url:string="https://8080-bfebfcbdbbfacbbecabcdadeafbbdcaeafe.premiumproject.exam
   {
     return this.http.get<any[]>(this.url+'/ListPlayers')
   }
-  getPlayerById(id:number):Observable<Player>
+  getPlayerById(id:number):Observable<any>
   {
-    return this.http.get<Player>(this.url+'/GetPlayer/'+id)
+    return this.http.get<any>(this.url+'/GetPlayer/'+id)
   }
-  deletePlayer(id:number):Observable<Player>
+  deletePlayer(id:number):Observable<any>
   {
-    return this.http.delete<Player>(this.url+'/DeletePlayer/'+id)
+    return this.http.delete<any>(this.url+'/DeletePlayer/'+id)
   }
+  httpOption={headers:new HttpHeaders({'Content-type':'application/json'})}
+  addPlayer(pl:any):Observable<any>
+  {
+    return this.http.post<any>(this.url+'/AddPlayer',pl,this.httpOption)
+  }
+  editPlayer(p:any):Observable<any>
+  {
+    return this.http.put<any>(this.url+'/EditPlayer/'+p.id,p,this.httpOption)
+  }
+  getTeams():Observable<any[]>
+  {
+    return this.http.get<any[]>(this.url+'/ListTeams')
+  }
+  createTeam(team:any):Observable<any>
+  {
+     return this.http.post<any>(this.url+'/AddTeam',team,this.httpOption)
+  }
+  
 }

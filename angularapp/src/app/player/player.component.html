@@ -15,7 +15,7 @@
          <td>{{p.id}}</td>
          <td>{{p.name}}</td>
          <td>{{p.age}}</td>
-         <td>{{p.teamId }}</td>
+          <td>{{p.teamId }}</td>
          <td>{{p.category}}</td>
          <td>{{p.biddingPrice}}</td>
          <td>
@@ -27,4 +27,13 @@
         </tr>
       </tbody>
     </table>
+</div>
+
+<div style="display:none;">
+  <ul *ngFor="let i of playerdata">
+    <li>
+      <button>Edit</button>
+      <button>Delete</button>
+    </li>
+  </ul>
 </div>

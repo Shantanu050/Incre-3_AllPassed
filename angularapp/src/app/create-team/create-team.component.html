@@ -1,0 +1,9 @@
+<div class="container jumbotron">
+    <form (ngSubmit)="addTeam(teamsdata)" #teamsfrom="ngForm">
+        <div class="form-group">
+            <label for="name">Team Name</label>
+            <input type="text" id="name" name="name" [(ngModel)]="teamsdata.name"  #name="ngModel" class="form-control">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add Team">
+    </form>
+</div>

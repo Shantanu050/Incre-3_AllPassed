@@ -1,0 +1,30 @@
+<div class="container jumbotron">
+    <form (ngSubmit)="savePlayer(playerdata)" #addform="ngForm">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter Player Name" [(ngModel)]="playerdata.name"
+        #name="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" name="age" id="age" placeholder="Enter Player age" [(ngModel)]="playerdata.age"
+        #age="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="teamId">Team ID</label>
+        <input type="text" name="teamId" id="teamId" placeholder="Enter Player Team Id" [(ngModel)]="playerdata.teamId"
+        #teamId="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" name="category" id="category" placeholder="Enter Player Category" [(ngModel)]="playerdata.category"
+        #category="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="biddingPrice">Bidding Price</label>
+        <input type="text" name="biddingPrice" id="biddingPrice" placeholder="Enter Player Bidding Price" [(ngModel)]="playerdata.biddingPrice"
+        #biddingPrice="ngModel" class="form-control">
+    </div>
+    <input type="submit" value="Add Player" class="btn btn-primary">
+    </form>
+</div>

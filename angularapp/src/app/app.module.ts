@@ -7,12 +7,20 @@ import { PlayerComponent } from './player/player.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddplayerComponent } from './addplayer/addplayer.component';
+import { EditplayerComponent } from './editplayer/editplayer.component';
+import { GetTeamsComponent } from './get-teams/get-teams.component';
+import { CreateTeamComponent } from './create-team/create-team.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerComponent,
-    DeletePlayerComponent
+    DeletePlayerComponent,
+    AddplayerComponent,
+    EditplayerComponent,
+    GetTeamsComponent,
+    CreateTeamComponent
   ],
   imports: [
     BrowserModule,
