@@ -118,7 +118,7 @@ namespace dotnetapp.Controllers
         [Route("EditTeam/{id}")]
         public IActionResult EditTeam(int id, Team newTeam)
         {
-            Team oldTeam=_context.Teams.Find(newTeam.Id);
+            Team oldTeam =_context.Teams.Find(id);
             oldTeam.Name=newTeam.Name;
             _context.SaveChanges();
             return Ok();
