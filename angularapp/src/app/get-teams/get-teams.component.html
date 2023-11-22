@@ -10,7 +10,12 @@
             <td>{{team.id}}</td>
             <td>{{team.name}}</td>
             <!-- <td>{{team.maximumBudget}}</td> -->
-            <td></td>
+            <td>
+                <a [routerLink]="['/deleteTeam',team.id]">Delete</a>
+            </td>
+            <td>
+                <a [routerLink]="['/editTeam',team.id]">Edit</a>
+            </td>
             </tr>
         </tbody>
     </table>

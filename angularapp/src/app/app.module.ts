@@ -12,6 +12,7 @@ import { EditplayerComponent } from './editplayer/editplayer.component';
 import { GetTeamsComponent } from './get-teams/get-teams.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { DeleteTeamComponent } from './delete-team/delete-team.component';
+import { EditTeamComponent } from './edit-team/edit-team.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteTeamComponent } from './delete-team/delete-team.component';
     EditplayerComponent,
     GetTeamsComponent,
     CreateTeamComponent,
-    DeleteTeamComponent
+    DeleteTeamComponent,
+    EditTeamComponent
   ],
   imports: [
     BrowserModule,

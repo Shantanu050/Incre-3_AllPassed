@@ -6,6 +6,7 @@ import { AddplayerComponent } from './addplayer/addplayer.component';
 import { EditplayerComponent } from './editplayer/editplayer.component';
 import { GetTeamsComponent } from './get-teams/get-teams.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
+import { DeleteTeamComponent } from './delete-team/delete-team.component';
 
 const routes: Routes = [
   {path:'listPlayer',component:PlayerComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'addPlayer',component:AddplayerComponent},
   {path:'editPlayer/:id',component:EditplayerComponent},
   {path:'listTeams',component:GetTeamsComponent},
-  {path:'addTeams',component:CreateTeamComponent}
+  {path:'addTeams',component:CreateTeamComponent},
+  {path:'deleteTeam/:id',component:DeleteTeamComponent}
 
 ];
 
