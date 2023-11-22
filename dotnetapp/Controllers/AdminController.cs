@@ -114,6 +114,26 @@ namespace dotnetapp.Controllers
             return BadRequest("Cannot add team");
         }
 
+        [HttpPut]
+        [Route("EditTeam/{id}")]
+        public IActionResult EditTeam(int id, Team newTeam)
+        {
+            Team oldTeam=_context.Teams.Find(newTeam.Id);
+            oldTeam.Name=newTeam.Name;
+            _context.SaveChanges();
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("DeleteTeam/{id}")]
+        public IActionResult DeleteTeam(int id)
+        {
+            Team teamToDelete=_context.Teams.Find(id);
+            _context.Teams.Remove(teamToDelete);
+            _context.SaveChanges();
+            return Ok();
+        }
+
         
 
         
