@@ -39,5 +39,14 @@ url:string="https://8080-bfebfcbdbbfacbbecabcdadeafbbdcaeafe.premiumproject.exam
   {
      return this.http.post<any>(this.url+'/AddTeam',team,this.httpOption)
   }
+  deleteTeam(id:number):Observable<any>
+  {
+    return this.http.delete<any>(this.url+'/DeleteTeam/'+id)
+  }
+  editTeam(team:any):Observable<any>
+  {
+    return this.http.put<any>(this.url+'/EditTeam/'+team.id,team,this.httpOption)
+  }
+
   
 }
