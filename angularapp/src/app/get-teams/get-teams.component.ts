@@ -10,9 +10,9 @@ import { Team } from '../models/team.model';
 })
 export class GetTeamsComponent implements OnInit {
 teamsdata:Team[]=[]
-  constructor(private ps:AdminService,private route:Router,private ar:ActivatedRoute) { 
-    this.ps.getTeams().subscribe(data=>{
-      this.teamsdata.push(...data)
+  constructor(public service:AdminService) { 
+    this.service.getTeams().subscribe(teams=>{
+      this.teamsdata=teams
      })
   }
 
