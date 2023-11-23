@@ -9,12 +9,12 @@ import { Team } from 'src/models/team.model';
   styleUrls: ['./create-team.component.css']
 })
 export class CreateTeamComponent implements OnInit {
- newTeam: Team = { id: 0, name: '', maximumBudget:0};
-    constructor(private ps:AdminService,private route:Router,private ar:ActivatedRoute) { }
-addTeam(team:Team)
+  createdTeam: Team = { id: 0, name: '', maximumBudget:0};
+    constructor(private service:AdminService,private route:Router,private ar:ActivatedRoute) { }
+addTeam(newTeam:Team)
 {
-  this.newTeam=team
-  this.ps.createTeam(this.newTeam).subscribe(()=>
+  this.createdTeam=newTeam
+  this.service.createTeam(this.createdTeam).subscribe(()=>
   {
     alert('Team Added!!')
     this.route.navigate(['/listTeams'])

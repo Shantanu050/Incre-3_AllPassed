@@ -105,13 +105,10 @@ namespace dotnetapp.Controllers
         [Route("AddTeam")]
         public IActionResult AddTeam(Team newTeam)
         {
-            if(ModelState.IsValid)
-            {
             _context.Teams.Add(newTeam);
             _context.SaveChanges();
             return Created("Team added",newTeam);
-            }
-            return BadRequest("Cannot add team");
+
         }
 
         [HttpPut]
