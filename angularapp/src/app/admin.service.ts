@@ -31,9 +31,9 @@ url:string="https://8080-bfebfcbdbbfacbbecabcdadeafbbdcaeafe.premiumproject.exam
   {
     return this.http.put<any>(this.url+'/EditPlayer/'+p.id,p,this.httpOption)
   }
-  getTeams():Observable<any[]>
+  getTeams():Observable<Team[]>
   {
-    return this.http.get<any[]>(this.url+'/ListTeams')
+    return this.http.get<Team[]>(this.url+'/ListTeams')
   }
   createTeam(team:any):Observable<any>
   {
