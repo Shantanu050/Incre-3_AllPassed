@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'listTeams',component:GetTeamsComponent},
   {path:'addTeams',component:CreateTeamComponent},
   {path:'deleteTeam/:id',component:DeleteTeamComponent},
-  { path: '/', component: HomeComponent }
+ // { path: '/', component: HomeComponent }
 
 ];
 

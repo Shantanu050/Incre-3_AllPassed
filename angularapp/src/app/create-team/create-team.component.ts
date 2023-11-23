@@ -9,7 +9,7 @@ import { Team } from 'src/models/team.model';
   styleUrls: ['./create-team.component.css']
 })
 export class CreateTeamComponent implements OnInit {
- newTeam: Team = { id: 3, name: 'New Team', maximumBudget: 50000 };
+ newTeam: Team = { id: 0, name: 'New Team', maximumBudget: 50000 };
     constructor(private ps:AdminService,private route:Router,private ar:ActivatedRoute) { }
 addTeam(team:any)
 {
