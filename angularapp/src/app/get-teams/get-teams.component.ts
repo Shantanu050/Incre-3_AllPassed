@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Team } from '../../models/team.model';
 import { AdminService } from '../services/admin.service';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-get-teams',
