@@ -8,6 +8,8 @@ import { GetTeamsComponent } from './get-teams/get-teams.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { DeleteTeamComponent } from './delete-team/delete-team.component';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { OrganizerComponent } from './organizer/organizer.component';
 
 const routes: Routes = [
   {path:'listPlayer',component:PlayerComponent},
@@ -17,6 +19,9 @@ const routes: Routes = [
   {path:'listTeams',component:GetTeamsComponent},
   {path:'addTeams',component:CreateTeamComponent},
   {path:'deleteTeam/:id',component:DeleteTeamComponent},
+  { path: '', component: HomeComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'organizer', component: OrganizerComponent },
  // { path: '/', component: HomeComponent }
 
 ];
