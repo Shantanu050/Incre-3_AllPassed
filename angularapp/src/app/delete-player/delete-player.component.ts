@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from '../admin.service';
+import { AdminService } from '../services/admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Player } from '../models/player.model';
+import { Player } from '../../models/player.model';
 
 @Component({
   selector: 'app-delete-player',

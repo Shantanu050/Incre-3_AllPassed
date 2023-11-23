@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Player } from './models/player.model';
-import { Team } from './models/team.model';
 import { resourceUsage } from 'process';
+import { Player } from '../../models/player.model';
+import { Team } from '../../models/team.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -35,9 +35,9 @@ url:string="https://8080-bfebfcbdbbfacbbecabcdadeafbbdcaeafe.premiumproject.exam
   {
     return this.http.get<Team[]>(this.url+'/ListTeams')
   }
-  createTeam(team:any):Observable<any>
+  createTeam(team:Team):Observable<Team>
   {
-     return this.http.post<any>(this.url+'/AddTeam',team,this.httpOption)
+     return this.http.post<Team>(this.url+'/AddTeam',team,this.httpOption)
   }
   deleteTeam(id:number):Observable<any>
   {
