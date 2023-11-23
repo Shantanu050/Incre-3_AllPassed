@@ -19,7 +19,9 @@
          <td>{{p.category}}</td>
          <td>{{p.biddingPrice}}</td>
          <td>
-            <a [routerLink]="['/editPlayer',p.id]">Edit</a>
+          <li>
+            <button>Edit</button>
+          </li>
          </td>
          <td>
             <a [routerLink]="['/deletePlayer',p.id]">Delete</a>
