@@ -7,6 +7,8 @@ namespace dotnetapp.Models
         [Key]
         public int Id{get;set;}
         public string Name{get;set;}
+        public decimal {get;set;}
+
         public ICollection<Player>? Players{get;set;}
 
     }

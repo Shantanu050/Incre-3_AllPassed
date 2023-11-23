@@ -35,9 +35,9 @@ url:string="https://8080-bfebfcbdbbfacbbecabcdadeafbbdcaeafe.premiumproject.exam
   {
     return this.http.get<Team[]>(this.url+'/ListTeams')
   }
-  createTeam(team:Team):Observable<Team>
+  createTeam(team:any):Observable<any>
   {
-     return this.http.post<Team>(this.url+'/AddTeam',team,this.httpOption)
+     return this.http.post<any>(this.url+'/AddTeam',team,this.httpOption)
   }
   deleteTeam(id:number):Observable<any>
   {
