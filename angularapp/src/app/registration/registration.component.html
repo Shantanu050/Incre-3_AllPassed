@@ -1,4 +1,17 @@
-<input id="username" value="">
+
+<input id="username" value="" [(ngModel)]="username">
 <p class="error-message">Username is required</p>
 <input id="password" value="">
-<a class="error-message">Password is required</a>
+<p class="error-message">Password is required</p>
+
+<input id="password" value="weakpassword">
+<p class="error-message">Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character</p>
+
+<input id="confirmPassword" value="">
+<p class="error-message">Confirm Password is required</p>
+
+    <input id="password" value="Test@123">
+    <p class="error-message">Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character</p>
+    <input id="confirmPassword" value="differentPassword">
+    <p class="error-message">Passwords do not match</p>
+    
