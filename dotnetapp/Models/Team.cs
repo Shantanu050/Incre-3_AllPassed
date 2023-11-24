@@ -9,7 +9,7 @@ namespace dotnetapp.Models
         public string Name{get;set;}
         public decimal MaximumBudget{get;set;}
 
-        public ICollection<Player>? Players{get;set;}
+       //public ICollection<Player>? Players{get;set;}
 
     }
 
